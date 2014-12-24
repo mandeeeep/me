@@ -6,8 +6,6 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.10.4"
 
-JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
-
 includeFilter in (Assets, LessKeys.less) := "*.less"
 
 excludeFilter in (Assets, LessKeys.less) := "_*.less"

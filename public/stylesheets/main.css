@@ -5,3 +5,13 @@
 .text-align-center{
 	text-align: center! important;
 }
+
+.panel-bg-blue{
+	/*background-color: #4582ec! important;*/
+	background-color: white! important;
+}
+
+.panel-title-white{
+	color: black! important;
+	font-size: 15px! important;
+}

@@ -1,53 +1,29 @@
-// Readable 3.3.1
+// Superhero 3.3.1
 // Bootswatch
 // -----------------------------------------------------
 
-@import url("//fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("//fonts.googleapis.com/css?family=Lato:300,400,700");
 
 // Navbar =====================================================================
 
 .navbar {
-  font-family: @headings-font-family;
+  .box-shadow(none);
+  border: none;
+  font-size: 12px;
 
-  &-nav,
-  &-form {
-    margin-left: 0;
-    margin-right: 0;
-  }
+  &-default {
 
-  &-nav > li > a {
-    padding: @padding-base-vertical @padding-base-horizontal;
-    margin: 12px 6px;
-    border: 1px solid transparent;
-    border-radius: @border-radius-base;
-
-    &:hover {
-      border: 1px solid #ddd;
+    .badge {
+      background-color: #fff;
+      color: @navbar-default-bg;
     }
   }
 
-  &-nav > .active > a,
-  &-nav > .active > a:hover {
-    border: 1px solid #ddd;
-  }
+  &-inverse {
 
-  &-default .navbar-nav > .active > a:hover {
-    color: @navbar-default-link-hover-color;
-  }
-
-  &-inverse .navbar-nav > .active > a:hover {
-    color: @navbar-inverse-link-hover-color;
-  }
-
-  &-brand {
-    padding-top: 20px;
-  }
-}
-
-@media (max-width: @grid-float-breakpoint) {
-  .navbar {
-    .navbar-nav > li > a {
-      margin: 0;
+    .badge {
+      background-color: #fff;
+      color: @navbar-inverse-bg;
     }
   }
 }
@@ -55,21 +31,171 @@
 // Buttons ====================================================================
 
 .btn {
-  font-family: @headings-font-family;
+
+  font-weight: 300;
+
+  &-default {
+    &:hover {
+      background-color: darken(@btn-default-bg, 3%);
+    }
+  }
+
+  &-sm,
+  &-xs {
+    font-size: 12px;
+  }
 }
 
 // Typography =================================================================
 
+body {
+  font-weight: 300;
+}
+
+.text-primary,
+.text-primary:hover {
+  color: @brand-primary;
+}
+
+.text-success,
+.text-success:hover {
+  color: @brand-success;
+}
+
+.text-danger,
+.text-danger:hover {
+  color: @brand-danger;
+}
+
+.text-warning,
+.text-warning:hover {
+  color: @brand-warning;
+}
+
+.text-info,
+.text-info:hover {
+  color: @brand-info;
+}
+
+.page-header {
+  border-bottom-color: @table-border-color;
+}
+
+.dropdown-menu {
+
+  border: none;
+  margin: 0;
+  .box-shadow(none);
+
+  > li > a {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+.btn-group.open .dropdown-toggle {
+  .box-shadow(none);
+}
+
+.dropdown-header {
+  font-size: 12px;
+}
+
 // Tables =====================================================================
+
+table,
+.table {
+  font-size: 12px;
+
+  a:not(.btn) {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .text-muted {
+    color: @text-muted;
+  }
+
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td {
+    border-color: transparent;
+  }
+ }
 
 // Forms ======================================================================
 
-legend {
-  font-family: @headings-font-family;
+input,
+textarea {
+  color: @input-color;
 }
 
+label,
+.radio label,
+.checkbox label,
+.help-block {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.input-addon,
 .input-group-addon {
-  font-family: @font-family-sans-serif;
+  color: @text-color;
+}
+
+.has-warning {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-warning;
+  }
+
+  .input-group-addon {
+    border: none;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-danger;
+  }
+
+  .input-group-addon {
+    border: none;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-success;
+  }
+
+  .input-group-addon {
+    border: none;
+  }
+}
+
+.form-control:focus {
+  .box-shadow(none);
+}
+
+.has-warning,
+.has-error,
+.has-success {
+  .form-control:focus {
+    .box-shadow(none);
+  }
 }
 
 // Navs =======================================================================
@@ -78,110 +204,129 @@ legend {
   .open > a,
   .open > a:hover,
   .open > a:focus {
-    border: 1px solid #ddd;
+    border-color: transparent;
   }
 }
 
-.pagination {
+.nav-tabs {
+  > li > a {
+    color: @text-color;
+  }
+}
 
-  font-family: @headings-font-family;
-
-  &-lg > li > a,
-  &-lg > li > span {
-    padding: 14px 24px;
+.nav-pills {
+  > li > a {
+    color: @text-color;
   }
 }
 
 .pager {
-
-  font-family: @headings-font-family;
-
   a {
     color: @text-color;
-  }
-
-  a:hover {
-    border-color: transparent;
-    color: #fff;
-  }
-
-  .disabled a {
-    border-color: @pager-border;
   }
 }
 
 // Indicators =================================================================
 
-.close {
+.label {
+  font-weight: 300;
+}
+
+.alert {
   color: #fff;
-  text-decoration: none;
-  text-shadow: none;
+
+  a,
+  .alert-link {
+    color: #fff;
+  }
+}
+
+.close {
   opacity: 0.4;
 
   &:hover,
   &:focus {
-    color: #fff;
     opacity: 1;
   }
-}
-
-.alert {
-  .alert-link {
-    color: @alert-success-text;
-    text-decoration: underline;
-  }
-}
-
-.label {
-  font-family: @headings-font-family;
-  font-weight: normal;
-
-  &-default {
-    border: 1px solid #ddd;
-    color: @text-color;
-  }
-
-}
-
-.badge {
-  padding: 1px 7px 5px;
-  vertical-align: 2px;
-  font-family: @headings-font-family;
-  font-weight: normal;
 }
 
 // Progress bars ==============================================================
 
 // Containers =================================================================
 
-.panel {
+.well {
   .box-shadow(none);
+}
 
-  &-default {
-    .close {
-      color: @text-color;
+a.list-group-item {
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    border: none;
+  }
+
+  &-success {
+    &.active {
+      background-color: @state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-success-bg, 5%);
     }
   }
 
-  &-primary,
-  &-success,
-  &-warning,
-  &-danger,
-  &-info {
-    .panel-heading {
-      color: #fff;
+  &-warning {
+    &.active {
+      background-color: @state-warning-bg;
     }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-warning-bg, 5%);
+    }
+  }
 
-    .panel-body {
-      border: 1px solid #ddd;
-      border-top-width: 0;
-      border-radius: 0 0 @border-radius-base @border-radius-base;
+  &-danger {
+    &.active {
+      background-color: @state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-danger-bg, 5%);
     }
   }
 }
 
-.modal {
-  .close {
+.panel {
+  border: none;
+
+  &-default > .panel-heading {
+    background-color: @table-bg-hover;
     color: @text-color;
+  }
+}
+
+.thumbnail {
+  background-color: @well-bg;
+  border: none;
+}
+
+.modal {
+  padding: 0;
+
+  &-header,
+  &-footer {
+    background-color: @table-bg-hover;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.popover {
+  &-title {
+    border: none;
   }
 }
